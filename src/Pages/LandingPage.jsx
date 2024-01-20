@@ -10,10 +10,12 @@ export default function LandingPage({ children }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/v1/products").then((res) => {
-      setProducts(res.data.products);
-      console.log(res.data);
-    });
+    axios
+      .get("https://foodbackend1.onrender.com/api/v1/products")
+      .then((res) => {
+        setProducts(res.data.products);
+        console.log(res.data);
+      });
   }, []);
 
   return (
