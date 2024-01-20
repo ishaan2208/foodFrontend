@@ -5,6 +5,8 @@ import "./LandingPage.css";
 import "../components/Header/Header.css";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
+import logo1 from "../assets/pic1.png";
+import logo2 from "../assets/pic2.png";
 
 export default function LandingPage({ children }) {
   const [products, setProducts] = useState([]);
@@ -37,7 +39,7 @@ export default function LandingPage({ children }) {
           </button>
         </div>
         <div className=" min-h-full md:w-1/2">
-          <img src="src/assets/pic1.png" alt="" className=" animate-spin-2 " />
+          <img src={logo1} alt="" className=" animate-spin-2 " />
         </div>
       </div>
       <div className=" w-full min-h-screen xl:flex flex-col items-center text-white justify-center bg-gradient-to-b from-black to-slate-900 hidden ">
@@ -134,7 +136,7 @@ export default function LandingPage({ children }) {
             </h1>
           </div>
           <div className="">
-            <img src="src/assets/pic2.png" alt="" className=" px-12" />
+            <img src={logo2} alt="" className=" px-12" />
           </div>
         </div>
       </div>

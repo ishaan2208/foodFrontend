@@ -22,28 +22,31 @@ export default function Login() {
     console.log(data);
 
     axios
-      .post("https://foodbackend1.onrender.com/api/v1/users/login", data)
+      .post("/api/v1/users/login", data)
       .then((res) => {
-        axios
-          .get("https://foodbackend1.onrender.com/api/v1/users/me")
-          .then((res) => {
-            console.log(res.data.data);
-            console.log(res.data);
-            if (res.data.data) {
-              dispatch(
-                login({
-                  email: res.data.data.email,
-                  name: res.data.data.name,
-                  _id: res.data.data._id,
-                })
-              );
-              navigate("/");
-            }
-          })
-          .catch((errors) => {
-            console.log("heres");
-            console.log(errors);
-          });
+        // if (res.data) {
+        //   axios
+        //     .get("https://foodbackend1.onrender.com/api/v1/users/me")
+        //     .then((res) => {
+        //       console.log(res.data.data);
+        //       console.log(res.data);
+        //       if (res.data.data) {
+        //         dispatch(
+        //           login({
+        //             email: res.data.data.email,
+        //             name: res.data.data.name,
+        //             _id: res.data.data._id,
+        //           })
+        //         );
+        //         navigate("/");
+        //       }
+        //     })
+        //     .catch((errors) => {
+        //       console.log("heres");
+        //       console.log(errors);
+        //     });
+        // }
+        navigate("/");
       })
       .catch((err) => {
         setError("email", {
