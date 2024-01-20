@@ -11,6 +11,7 @@ export default function Login() {
     register,
     handleSubmit,
     watch,
+    setError,
     formState: { errors },
   } = useForm();
 
@@ -20,21 +21,36 @@ export default function Login() {
   const onDataSubmit = (data) => {
     console.log(data);
 
-    axios.post("/api/v1/users/login", data).then((res) => {
-      axios.get("/api/v1/users/me").then((res) => {
-        console.log(res.data.data);
-        if (res.data.data) {
-          dispatch(
-            login({
-              email: res.data.data.email,
-              name: res.data.data.name,
-              _id: res.data.data._id,
-            })
-          );
-          navigate("/");
-        }
+    axios
+      .post("/api/v1/users/login", data)
+      .then((res) => {
+        axios
+          .get("/api/v1/users/me")
+          .then((res) => {
+            console.log(res.data.data);
+            console.log(res.data);
+            if (res.data.data) {
+              dispatch(
+                login({
+                  email: res.data.data.email,
+                  name: res.data.data.name,
+                  _id: res.data.data._id,
+                })
+              );
+              navigate("/");
+            }
+          })
+          .catch((errors) => {
+            console.log("heres");
+            console.log(errors);
+          });
+      })
+      .catch((err) => {
+        setError("email", {
+          type: "manual",
+          message: "Invalid email or password",
+        });
       });
-    });
     // // dispatch(login(data));
     // navigate("/");
     // localStorage.setItem("auth", JSON.stringify(data));
