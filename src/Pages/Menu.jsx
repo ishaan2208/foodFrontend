@@ -15,7 +15,7 @@ export default function Menu() {
 
   useEffect(() => {
     axios
-      .get("/api/v1/products")
+      .get("https://foodbackend1.onrender.com/api/v1/products")
       .then((res) => {
         setData(res.data.products);
         setLoading(false);

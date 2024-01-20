@@ -10,10 +10,12 @@ const Orders = () => {
 
   useEffect(() => {
     if (auth) {
-      axios.get("/api/v1/orders").then((res) => {
-        console.log(res.data);
-        setOrders(res.data.data);
-      });
+      axios
+        .get("https://foodbackend1.onrender.com/api/v1/orders")
+        .then((res) => {
+          console.log(res.data);
+          setOrders(res.data.data);
+        });
     }
   }, []);
 

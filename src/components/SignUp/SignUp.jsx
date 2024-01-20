@@ -25,7 +25,7 @@ export default function SignUp() {
       name: getValues("name"),
     };
     axios
-      .post("/api/v1/users/signup", data1)
+      .post("https://foodbackend1.onrender.com/api/v1/users/signup", data1)
       .then((res) => {
         console.log(res.data);
       })

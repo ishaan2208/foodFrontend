@@ -22,10 +22,10 @@ export default function Login() {
     console.log(data);
 
     axios
-      .post("/api/v1/users/login", data)
+      .post("https://foodbackend1.onrender.com/api/v1/users/login", data)
       .then((res) => {
         axios
-          .get("/api/v1/users/me")
+          .get("https://foodbackend1.onrender.com/api/v1/users/me")
           .then((res) => {
             console.log(res.data.data);
             console.log(res.data);

@@ -9,16 +9,18 @@ export default function AuthLayout({ authstatus = false, children }) {
   const [loader, setLoader] = useState(true);
   const dispatch = useDispatch();
   useEffect(() => {
-    axios.get("/api/v1/users/me").then((res) => {
-      console.log(res.data.data);
-      dispatch(
-        login({
-          email: res.data.data.email,
-          name: res.data.data.name,
-          _id: res.data.data._id,
-        })
-      );
-    });
+    axios
+      .get("https://foodbackend1.onrender.com/api/v1/users/me")
+      .then((res) => {
+        console.log(res.data.data);
+        dispatch(
+          login({
+            email: res.data.data.email,
+            name: res.data.data.name,
+            _id: res.data.data._id,
+          })
+        );
+      });
   }, []);
   useEffect(() => {
     setTimeout(() => {
