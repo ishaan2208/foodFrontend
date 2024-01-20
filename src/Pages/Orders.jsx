@@ -6,11 +6,11 @@ import { useSelector } from "react-redux";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
-  const auth = useSelector((state) => state.auth.auth);
+  const auth = useSelector((state) => state.auth);
 
   useEffect(() => {
-    if (auth) {
-      const token = useSelector((state) => state.auth.user.token);
+    if (auth.auth) {
+      const token = auth.user.token;
       axios
         .post("https://foodbackend1.onrender.com/api/v1/orders/all", {
           token,
@@ -22,7 +22,7 @@ const Orders = () => {
     }
   }, []);
 
-  return auth ? (
+  return auth.auth ? (
     <div
       className=" min-h-screen bg-gradient-to-tr from-black to-slate-900 text-white flex 
      flex-col items-center h-full w-auto"

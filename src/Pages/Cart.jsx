@@ -7,11 +7,11 @@ import axios from "axios";
 
 export default function Cart() {
   const cart = useSelector((state) => state.cart.items);
-  const auth = useSelector((state) => state.auth.auth);
+  const auth = useSelector((state) => state.auth);
 
   console.log(auth);
   let userId = "";
-  if (auth) {
+  if (auth.auth) {
     userId = useSelector((state) => state.auth.user._id);
   }
   // console.log(cart);
@@ -39,7 +39,7 @@ export default function Cart() {
       toast.error("Cart is Empty");
       return;
     }
-    if (!auth) {
+    if (!auth.auth) {
       toast.error("Please Login to Continue");
       return;
     }
