@@ -11,10 +11,13 @@ export default function Header() {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    axios.post("/api/v1/users/logout").then((res) => {
-      console.log(res.data);
-      dispatch(logout());
-    });
+    axios
+      .post("https://foodbackend1.onrender.com/api/v1/users/logout")
+      .then((res) => {
+        console.log(res.data);
+        localStorage.clear();
+        dispatch(logout());
+      });
   };
 
   const navItems1 = [
