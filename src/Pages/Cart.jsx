@@ -45,7 +45,7 @@ export default function Cart() {
     }
     const token = auth.user.token;
     axios
-      .post("/api/v1/orders", {
+      .post("https://foodbackend1.onrender.com/api/v1/orders", {
         productsArray: cart,
         token,
       })
