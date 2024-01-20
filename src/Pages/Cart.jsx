@@ -8,6 +8,7 @@ import axios from "axios";
 export default function Cart() {
   const cart = useSelector((state) => state.cart.items);
   const auth = useSelector((state) => state.auth.auth);
+  const token = useSelector((state) => state.auth.user.token);
   console.log(auth);
   let userId = "";
   if (auth) {
@@ -45,6 +46,7 @@ export default function Cart() {
     axios
       .post("/api/v1/orders", {
         productsArray: cart,
+        token,
       })
       .then((res) => {
         console.log(res.data.data);

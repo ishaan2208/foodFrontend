@@ -22,7 +22,7 @@ export default function Login() {
     console.log(data);
 
     axios
-      .post("/api/v1/users/login", data)
+      .post("https://foodbackend1.onrender.com/api/v1/users/login", data)
       .then((res) => {
         // if (res.data) {
         //   axios
@@ -46,6 +46,12 @@ export default function Login() {
         //       console.log(errors);
         //     });
         // }
+        localStorage.clear();
+        console.log(res.data);
+        localStorage.setItem("authToken", JSON.stringify(res.data.data));
+        console.log(res.data.token);
+        dispatch(login(res.data.data));
+
         navigate("/");
       })
       .catch((err) => {
