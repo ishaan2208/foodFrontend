@@ -1,0 +1,29 @@
+.fade-out {
+  animation: fadeOut linear;
+  animation-timeline: scroll();
+  animation-range: 0% contain;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+  75% {
+    opacity: 0;
+    scale: 0.7;
+  }
+  100% {
+    opacity: 0;
+    scale: 0.5;
+  }
+}
+
+@keyframes spin-2 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-2 {
+  animation: spin 30s linear infinite;
+}

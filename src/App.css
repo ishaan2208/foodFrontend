@@ -1,0 +1,41 @@
+.fade-in {
+    animation: fade-in linear forwards;
+    animation-timeline: scroll();
+    animation-range-start: cover;
+    animation-range-end: contain;
+
+
+}
+
+.fade-out {
+    animation: fade-out linear forwards;
+    animation-timeline: scroll();
+    animation-range-start: contain;
+    animation-range-end: 70vh;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        scale: 0.3;
+    }
+    50% {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        scale: 1;
+    }
+    50% {
+        opacity: 0;
+        scale: 1.1;
+    }
+    100% {
+        opacity: 0;
+        scale: 1.5;
+    }
+}

@@ -1,0 +1,48 @@
+.fade-in {
+  animation: fadeIn linear;
+  animation-timeline: view();
+  animation-range: cover contain;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    scale: 0.7;
+    translate: 0 10%;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes move-left {
+  0% {
+    transform: translateX(+200%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+.move-left {
+  animation: move-left linear;
+  animation-timeline: view();
+  animation-range: cover;
+}
+
+@keyframes move-right {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(+200%);
+  }
+}
+
+.move-right {
+  animation: move-right linear;
+  animation-timeline: view();
+  animation-range: cover;
+}
