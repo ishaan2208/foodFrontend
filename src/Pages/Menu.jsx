@@ -65,39 +65,42 @@ export default function Menu() {
           Search
         </button> */}
       </div>
-      <div className=" flex justify-center w-f\">
-        <div className=" w-1/3  min-w-72 py-2 flex justify-center items-center border-[1px] border-white rounded-xl">
+      <div className=" flex justify-center w-full">
+        <div className=" w-1/3  min-w-72 py-2 flex flex-col justify-center items-center border-[1px] border-slate-700 rounded-xl">
           {" "}
-          <h1 className=" text-white text-xl hidden lg:block">
+          <h1 className="  text-xl hidden lg:block font-light text-gray-400">
             Select Category
           </h1>
-          <div className=" px-6 flex items-center ">
-            <label htmlFor="f" className=" text-white mr-4">
-              Food
-            </label>{" "}
-            <input
-              id="f"
-              type="checkbox"
-              className=" p-4 size-4"
-              checked={food}
-              onChange={() => {
-                setFood(!food);
-              }}
-            />
-          </div>
-          <div className=" px-6 flex items-center ">
-            <label htmlFor="b" className=" text-white mr-4">
-              Beverage
-            </label>{" "}
-            <input
-              id="b"
-              type="checkbox"
-              className=" p-4 size-4"
-              checked={beverage}
-              onChange={() => {
-                setBeverage(!beverage);
-              }}
-            />
+          <div className=" w-full flex justify-center my-4">
+            {" "}
+            <div className=" px-6 flex items-center ">
+              <label htmlFor="f" className=" text-white mr-2 font-bold">
+                Food
+              </label>{" "}
+              <input
+                id="f"
+                type="checkbox"
+                className=" p-4 size-4 accent-green-500"
+                checked={food}
+                onChange={() => {
+                  setFood(!food);
+                }}
+              />
+            </div>
+            <div className=" px-6 flex items-center ">
+              <label htmlFor="b" className=" text-white mr-4 font-bold">
+                Beverage
+              </label>{" "}
+              <input
+                id="b"
+                type="checkbox"
+                className=" p-4 size-4 accent-green-500"
+                checked={beverage}
+                onChange={() => {
+                  setBeverage(!beverage);
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

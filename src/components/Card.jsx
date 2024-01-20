@@ -36,17 +36,23 @@ export default function Card({ obj }) {
         <img
           src={obj.imageUrl}
           alt=""
-          className=" w-60 h-48 rounded-lg rounded-b"
+          className=" w-60 h-48 rounded-lg rounded-b saturate-100 "
         />
         <div className=" px-4 pt-12 pb-8">
-          <h1 className=" text-white text-md text-wrap">Name : {obj.name}</h1>
-          <h1 className=" text-white text-lg mb-6">Price: ₹{obj.price}</h1>
+          <h2 className=" text-gray-400 text-sm font-extralight">Name</h2>
+          <h1 className=" text-white text-md text-wrap font-extrabold mb-2">
+            {obj.name}
+          </h1>
+          <h2 className=" text-gray-400 text-sm font-extralight">Price</h2>
+          <h1 className=" text-white text-lg  font-extrabold mb-4">
+            ₹{obj.price}
+          </h1>
           <div className=" w-full flex items-center justify-center">
             {cartItem.includes(obj.name) ? (
               <>
                 <div className=" flex justify-center items-center mt-3">
                   <button
-                    className=" bg-red-500 size-8 rounded-lg text-2xl text-white m-2 hover:bg-red-700 duration-300"
+                    className=" bg-red-500 size-8 rounded-lg text-2xl text-white m-2 hover:bg-red-600 duration-300 font-semibold"
                     onClick={handleSubSubmit}
                   >
                     -
@@ -56,7 +62,7 @@ export default function Card({ obj }) {
                   </h1>
                   <button
                     className=" bg-green-500 size-8 rounded-lg text-2xl text-white m-2
-                     hover:bg-green-700 duration-300"
+                     hover:bg-green-600 duration-300 font-semibold"
                     onClick={handleAddSubmit}
                   >
                     +
@@ -66,7 +72,7 @@ export default function Card({ obj }) {
             ) : (
               <>
                 <button
-                  className=" px-3 py-2 bg-blue-600 rounded-lg mt-6 text-center text-white hover:bg-blue-800 duration-300"
+                  className=" px-3 py-2 bg-blue-600 rounded-lg mt-3 text-center text-white hover:bg-blue-800 duration-300"
                   onClick={handleAddSubmit}
                 >
                   Add to Cart
