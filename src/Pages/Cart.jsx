@@ -43,7 +43,7 @@ export default function Cart() {
       toast.error("Please Login to Continue");
       return;
     }
-    const token = useSelector((state) => state.auth.user.token);
+    const token = auth.user.token;
     axios
       .post("/api/v1/orders", {
         productsArray: cart,
